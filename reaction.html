@@ -18,12 +18,13 @@
     }
 
     function startTime() {
+      let counter= Math.round( Math.random() * (10 - 2) + 2)
 
-      for (let index = 0; index < 4; index++) {
+      for (let index = 0; index < counter; index++) {
 
         setTimeout(function () {
           document.getElementById('countdown').innerHTML = "Count " + index;
-        }, ((3 - index) * 1000))
+        }, (((counter-1) - index) * 1000))
 
       }
       setTimeout(function () {
@@ -36,7 +37,7 @@
           document.getElementById('target').innerHTML = "Time was "+buttonTime;
 
         }
-        }, (3000))
+        }, ((counter-1)*1000))
 
     }
 
