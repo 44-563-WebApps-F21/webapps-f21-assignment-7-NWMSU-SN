@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Stack
+	</title>
+
+
+	<style>
+		.flex-container {
+			display: flex;
+			flex-direction: row;
+			background-color: red;
+		}
+
+		.flex-container>div {
+			/*div children of the flex container*/
+			background-color: #f1f1f1;
+			margin: 10px;
+			padding: 20px;
+			font-size: 30px;
+		}
+
+		/* Responsive layout */
+		@media (max-width: 600px) {
+			.flex-container {
+				flex-direction: column;
+				background-color: green;
+			}
+		}
+
+		.input-div>input{
+			width: 10%;
+			border: none;
+			border-bottom: 1px solid black;
+			outline: none;
+			font-size: medium;
+			padding: 3px;
+
+		}
+		.input-div>button{
+			background-color: black;
+			border: black;
+			color: white;
+			padding: 5px;
+			font-size: larger;
+			margin-left: 5px;
+			cursor: pointer;
+			font-weight: bold;
+		}
+		.input-div>button:hover{
+			background-color: lime;
+			color: black;
+			font-weight: bold;
+		}
+	</style>
+	<script>
+
+	</script>
+</head>
+
+
+
+<body>
+	<h1>Santhosh Naini builds a stack</h1>
+	<div>
+		
+	</div>
+	<div class="flex-container" id="target">
+		<div class="stack">row item 1</div>
+		<div class="stack">row item 2</div>
+		<div class="stack">row item 3</div>
+	</div>
+
+	<p> Press the button to create an new element of type div and then add it to the container.
+	</p>
+	<div class="input-div">
+		<input id="input" type="text"/>
+		<button onclick="makeNewDiv()">Push value</button>
+
+	</div>
+	
+
+
+</body>
+<script>
+	function makeNewDiv() {
+		/* make the div and its text */
+		let data= document.getElementById("input").value;
+		let element = document.createElement("div")
+		element.innerHTML = data
+		element.className = "stack"
+		
+
+		/* add it to the container */
+		document.getElementById('target').appendChild(element)
+
+	}
+</script>
+
+</html>
